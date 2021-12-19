@@ -1,17 +1,19 @@
-FROM         ghcr.io/pterodactyl/yolks:debian
+# Dockerfile
+FROM node:6.9
 
-LABEL        author="Dave Mol" maintainer="dave@digimol.net"
+RUN useradd -m -d /home/container -s /bin/bash container
+RUN ln -s /home/container/ /nonexistent
+ENV USER=container HOME=/home/container
 
-RUN         apt-get update -y
-RUN         apt-get upgrade -y
-RUN         apt-get install -y curl sudo
-RUN         curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-RUN         apt-get install -y nodejs
-RUN         npm install -g meteor
+ENV METEOR_ALLOW_SUPERUSER=true
+ENV ROOT_URL="http://localhost:3000"
 
-USER        container
-ENV         USER=container HOME=/home/container
-WORKDIR     /home/container
+RUN curl "https://install.meteor.com/" | sh
 
-COPY        ./entrypoint.sh /entrypoint.sh
-CMD         [ "/bin/bash", "/entrypoint.sh" ]
+WORKDIR /home/container
+
+RUN chmod -R 700 /home/container/src/.meteor/local
+RUN meteor npm install
+
+EXPOSE 3000
+CMD ["npm", "start"]
