@@ -8,8 +8,10 @@ ENV USER=container HOME=/home/container
 ENV METEOR_ALLOW_SUPERUSER=true
 ENV ROOT_URL="http://localhost:3000"
 
+RUN apt-get install bash -y
+
 RUN curl "https://install.meteor.com/" | sh
 
 WORKDIR /home/container
 
-CMD [ "/home/container/run.sh" ]
+CMD [ "/bin/bash", "/home/container/run.sh" ]
