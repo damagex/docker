@@ -8,7 +8,11 @@ ENV USER=container HOME=/home/container
 ENV METEOR_ALLOW_SUPERUSER=true
 ENV ROOT_URL="http://localhost:3000"
 
-RUN apt-get install bash net-tools -y
+## Update base packages
+RUN          apt update \
+             && apt upgrade -y
+
+RUN apt install bash iproute2 net-tools -y
 
 RUN curl "https://install.meteor.com/" | sh
 
