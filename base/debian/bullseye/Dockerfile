@@ -2,7 +2,7 @@ FROM         debian:bullseye-slim
 
 LABEL        author="Dave Mol" maintainer="dave@digimol.net"
 
-LABEL        org.opencontainers.image.source="https://github.com/pterodactyl/yolks"
+LABEL        org.opencontainers.image.source="https://github.com/damagex/docker"
 LABEL        org.opencontainers.image.licenses=MIT
 
 ENV          DEBIAN_FRONTEND noninteractive
