@@ -1,4 +1,4 @@
-FROM         ghcr.io/damagex/images:debian
+FROM         ghcr.io/damagex/docker:debian-bullseye
 
 LABEL        author="Dave Mol" maintainer="dave@digimol.net"
 
