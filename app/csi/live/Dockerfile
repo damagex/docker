@@ -2,6 +2,7 @@ FROM         ghcr.io/pterodactyl/yolks:nodejs_17
 
 LABEL        author="Dave Mol" maintainer="dave@digimol.net"
 
+RUN         apk add --update npm -y
 RUN         npm install -g meteor
 
 USER        container
