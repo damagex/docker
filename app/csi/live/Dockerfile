@@ -1,5 +1,5 @@
 # Dockerfile
-FROM node:6.9
+FROM node:14-bullseye
 
 RUN useradd -m -d /home/container -s /bin/bash container
 RUN ln -s /home/container/ /nonexistent
