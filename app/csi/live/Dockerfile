@@ -14,4 +14,5 @@ RUN curl "https://install.meteor.com/" | sh
 
 WORKDIR /home/container
 
-CMD [ "/bin/bash", "/home/container/run.sh" ]
+COPY        ./entrypoint.sh /entrypoint.sh
+CMD         [ "/bin/bash", "/entrypoint.sh" ]
