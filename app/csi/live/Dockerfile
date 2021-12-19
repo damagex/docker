@@ -12,5 +12,4 @@ RUN curl "https://install.meteor.com/" | sh
 
 WORKDIR /home/container
 
-EXPOSE 3000
-CMD ["npm", "start"]
+CMD [ "/bin/bash", "/home/container/run.sh" ]
