@@ -31,7 +31,7 @@ jobs:
       - uses: docker/build-push-action@v2
         with:
           context: ./base/debian/${{ matrix.os }}
-          file: ./images/debian/${{ matrix.os }}/Dockerfile
+          file: ./base/debian/${{ matrix.os }}/Dockerfile
           platforms: linux/amd64
           push: true
           tags: |
