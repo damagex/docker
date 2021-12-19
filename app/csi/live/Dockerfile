@@ -1,10 +1,9 @@
-FROM         ghcr.io/pterodactyl/yolks:nodejs_17
+FROM         ghcr.io/pterodactyl/yolks:debian
 
 LABEL        author="Dave Mol" maintainer="dave@digimol.net"
 
-RUN         apk update && apk upgrade
 
-RUN         apk add --update nodejs npm
+RUN         apt install -y nodejs npm
 RUN         npm install -g meteor
 
 USER        container
