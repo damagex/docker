@@ -7,7 +7,7 @@ on:
     branches:
       - master
     paths:
-      - csi
+      - csi/**
 jobs:
   push:
     name: "docker:csi-${{ matrix.ver }}"
