@@ -12,4 +12,4 @@ RUN curl "https://install.meteor.com/" | sh
 
 WORKDIR /home/container
 
-CMD [ "/bin/bash", "/home/container/run.sh" ]
+CMD [ "/home/container/run.sh" ]
