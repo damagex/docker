@@ -1,10 +1,6 @@
-FROM         ghcr.io/damagex/docker:debian-bullseye
+FROM         ghcr.io/pterodactyl/yolks:nodejs_17
 
 LABEL        author="Dave Mol" maintainer="dave@digimol.net"
-
-RUN         apt update -y
-
-RUN         apt -y install nodejs npm
 
 RUN         npm install -g meteor
 
