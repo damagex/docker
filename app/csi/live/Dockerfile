@@ -4,7 +4,7 @@ LABEL        author="Dave Mol" maintainer="dave@digimol.net"
 
 RUN         apt update -y
 
-RUN         apt install nodejs npm
+RUN         apt -y install nodejs npm
 
 RUN         npm install -g meteor
 
