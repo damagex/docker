@@ -1,13 +1,9 @@
-FROM         ghcr.io/damagex/docker:debian-bullseye
+FROM         ghcr.io/parkervcp/yolks:nodejs_17
 
 LABEL        author="Dave Mol" maintainer="dave@digimol.net"
 
 ## install required packages
 RUN         apt update -y && apt upgrade -y
-
-RUN         curl -fsSL https://deb.nodesource.com/setup_17.x | bash -
-
-RUN         apt-get install -y nodejs
 
 RUN         npm install -g meteor
 
