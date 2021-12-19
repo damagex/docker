@@ -12,8 +12,5 @@ RUN curl "https://install.meteor.com/" | sh
 
 WORKDIR /home/container
 
-RUN chmod -R 700 /home/container/src/.meteor/local
-RUN meteor npm install
-
 EXPOSE 3000
 CMD ["npm", "start"]
