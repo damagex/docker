@@ -2,8 +2,10 @@ FROM         ghcr.io/pterodactyl/yolks:debian
 
 LABEL        author="Dave Mol" maintainer="dave@digimol.net"
 
-RUN         curl -fsSL https://deb.nodesource.com/setup_14.x | -E bash -
-RUN         apt install -y nodejs
+RUN         apt-get update -y && apt-get upgrade -y \
+             && apt-get install -y curl sudo
+RUN         curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+RUN         apt-get install -y nodejs
 RUN         npm install -g meteor
 
 USER        container
