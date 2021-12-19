@@ -8,7 +8,8 @@ RUN         apt -y install nodejs npm
 
 RUN         npm install -g meteor
 
-USER        container	     
+USER        container
+ENV         USER=container HOME=/home/container
 WORKDIR     /home/container
 
 COPY        ./entrypoint.sh /entrypoint.sh
