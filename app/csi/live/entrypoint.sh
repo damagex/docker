@@ -14,7 +14,7 @@ echo ":/home/container$ ${MODIFIED_STARTUP}"
 
 MONGO_URL={{MONGO_URL}}
 cd /home/container/app
-sudo chown -R container /home/container/app/.meteor/local
+chown -Rh container /home/container/app/.meteor/local
 meteor run --verbose --port 0.0.0.0:${SERVER_PORT}
 
 # Run the Server
