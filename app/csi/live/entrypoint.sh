@@ -22,5 +22,5 @@ cd /home/container/app
 meteor npm install
 
 MONGO_URL={{MONGO_URL}}
-chown -Rh container /home/container/app/.meteor/local
+chown -Rh container /home/container/app
 meteor run --verbose --port 0.0.0.0:${SERVER_PORT}
