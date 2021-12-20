@@ -12,8 +12,8 @@ meteor --version
 MODIFIED_STARTUP=$(echo -e ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')
 echo ":/home/container$ ${MODIFIED_STARTUP}"
 
-cd /home/container
 MONGO_URL={{MONGO_URL}}
+meteor install
 meteor run --allow-superuser --port {{SERVER_IP}}:{{SERVER_PORT}}
 
 # Run the Server
