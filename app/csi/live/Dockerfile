@@ -8,6 +8,8 @@ ENV USER=container HOME=/home/container
 ENV METEOR_ALLOW_SUPERUSER=true
 ENV ROOT_URL="http://localhost:3000"
 
+ENV          DEBIAN_FRONTEND noninteractive
+
 ## Update base packages
 RUN          apt update \
              && apt upgrade -y
