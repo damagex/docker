@@ -9,8 +9,8 @@ node -v
 meteor --version
 
 # Replace Startup Variables
-MODIFIED_STARTUP=$(echo -e ${STARTUP} 2>/home/container/max.log | tee --append /home/container/max.log | sed -e 's/{{/${/g' -e 's/}}/}/g')
+MODIFIED_STARTUP=$(echo -e ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')
 echo ":/home/container$ ${MODIFIED_STARTUP}"
 
 # Run the Server
-eval ${MODIFIED_STARTUP} 
+eval ${MODIFIED_STARTUP}
