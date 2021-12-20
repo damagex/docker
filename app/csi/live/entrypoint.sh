@@ -14,7 +14,7 @@ echo ":/home/container$ ${MODIFIED_STARTUP}"
 
 MONGO_URL={{MONGO_URL}}
 cd /home/container/app
-meteor run --allow-superuser --port 0.0.0.0:${SERVER_PORT}
+meteor run --verbose --allow-superuser --port 0.0.0.0:${SERVER_PORT}
 
 # Run the Server
 # eval ${MODIFIED_STARTUP}
